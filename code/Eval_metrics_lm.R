@@ -39,6 +39,8 @@ rmse_rf <- sqrt(mse_rf)
 cat("Random Forest Root Mean Squared Error (RMSE):", rmse_rf, "\n")
 
 
+r_squared_rf <- 1 - (sum((test_data$years_of_experience - predictions_rf)^2) / sum((test_data$years_of_experience - mean(test_data$years_of_experience))^2))
+cat("Random Forest R-squared (R2) Score:", r_squared_rf, "\n")
 
 
 
