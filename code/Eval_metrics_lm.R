@@ -35,6 +35,8 @@ mse_rf <- mean((predictions_rf - test_data$years_of_experience)^2)
 cat("Random Forest Mean Squared Error (MSE):", mse_rf, "\n")
 
 
+rmse_rf <- sqrt(mse_rf)
+cat("Random Forest Root Mean Squared Error (RMSE):", rmse_rf, "\n")
 
 
 
