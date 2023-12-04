@@ -42,6 +42,10 @@ cat("Random Forest Root Mean Squared Error (RMSE):", rmse_rf, "\n")
 r_squared_rf <- 1 - (sum((test_data$years_of_experience - predictions_rf)^2) / sum((test_data$years_of_experience - mean(test_data$years_of_experience))^2))
 cat("Random Forest R-squared (R2) Score:", r_squared_rf, "\n")
 
+n_rf <- nrow(test_data)
+p_rf <- ncol(test_data) - 1  # Number of predictors
+adj_r_squared_rf <- 1 - ((1 - r_squared_rf) * (n_rf - 1) / (n_rf - p_rf - 1))
+cat("Random Forest Adjusted R-squared:", adj_r_squared_rf, "\n")
 
 
 
